@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Portal</title>
+    <style type="text/css">
+        h1{
+            font-family:Times New ROman;
+            color:blue;
+            font-size:30px;
+            border:10px;
+           }
+           label{
+            font-family:Times New ROman;
+            color:orange;
+            font-size:30px;
+            border:10px;
+           }
+
+    </style>
+
+</head>
+<body>
+<h1 align="left">Nescode</h1>
+
+<label><u>Customer</u></label>
+
+<table border="1px">
+{% if custlist %}
+<thead>
+        <th>Customer Name:</th>
+        <th>Customer Address:</th>
+        <th>Customer Phone Number:</th>
+        <th>Customer Email-ID:</th>
+</thead>
+
+{% for cust in custlist %}
+
+    <tr id="tr">
+        <td>{{cust.Name}}</td>
+        <td>{{cust.Add}}</td>
+        <td>{{cust.Phone_no}}</td>
+        <td>{{cust.Email}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endif %}
+</body>
+</html>
+
+
